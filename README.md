@@ -75,7 +75,7 @@ This tool was built as a proof-of-concept and might not be completly secure. If 
 
 ## Options
 
-Env variables to pass into deploy.sh.
+Env variables to pass into [deploysh(deploy.sh)
 
 ```
 REPOSITORY_STATUS
