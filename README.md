@@ -4,13 +4,6 @@
 
 `docker-hook` listens to incoming HTTP requests and triggers your specified command.
 
-## Features
-
-* No dependencies
-* Super lightweight
-* Dead **simple setup process**
-* Authentification support
-
 ## Setup
 
 ### 1. Prepare Your Server
@@ -20,7 +13,6 @@
 No worries - it just downloads a Python script. There won't be anything installed or written elsewhere.
 
 ```sh
-
     curl https://raw.githubusercontent.com/yasaricli/docker-hook/master/docker-hook > docker-hook
     chmod +x docker-hook
 ```
@@ -64,10 +56,9 @@ $ docker-hook -c sh ./deploy.sh
 ```sh
 #! /bin/bash
 
-IMAGE="yourname/app"
-docker ps | grep $IMAGE | awk '{print $1}' | xargs docker stop
-docker pull $IMAGE
-docker run -d $IMAGE
+docker ps | grep $REPOSITORY_NAME | awk '{print $1}' | xargs docker stop
+docker pull $REPOSITORY_NAME
+docker run -d $REPOSITORY_NAME
 ```
 
 You can now test it by pushing something to `yourname/app` or by running the following command where `yourdomain.com` is either a domain pointing to your server or just its ip address.
@@ -83,6 +74,28 @@ $ curl -X POST yourdomain.com:8555/my-super-safe-token
 ## Caveat
 
 This tool was built as a proof-of-concept and might not be completly secure. If you have any improvement suggestions please open up an issue.
+
+## Options
+
+Env variables to pass into deploy.sh.
+
+```
+REPOSITORY_STATUS
+REPOSITORY_REPO_NAME
+REPOSITORY_DESCRIPTION
+REPOSITORY_NAMESPACE
+REPOSITORY_IS_TRUSTED
+REPOSITORY_FULL_DESCRIPTION
+REPOSITORY_COMMENT_COUNT
+REPOSITORY_STAR_COUNT
+REPOSITORY_REPO_URL
+REPOSITORY_OWNER
+REPOSITORY_DATE_CREATED
+REPOSITORY_IS_OFFICIAL
+REPOSITORY_DOCKERFILE
+REPOSITORY_IS_PRIVATE
+REPOSITORY_NAME
+```
 
 ## License
 
