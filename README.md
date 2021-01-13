@@ -33,7 +33,7 @@ The `command` can be any bash command of your choice. See the following [example
 
 Add a webhook like on the following image. `example.com` can be the domain of your server or its ip address. `docker-hook` listens to port `8555`. Please replace `my-super-safe-token` with your `auth-token`.
 
-![](http://i.imgur.com/B6QyfmC.png)
+![](dockerhub.png)
 
 ## Example
 
