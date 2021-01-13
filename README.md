@@ -1,4 +1,4 @@
-# docker-hook
+# Docker Hook
 
 > Automatic Docker Deployment via [Webhooks](https://docs.docker.com/docker-hub/repos/#webhooks)
 
@@ -12,10 +12,8 @@
 
 No worries - it just downloads a Python script. There won't be anything installed or written elsewhere.
 
-```sh
     curl https://raw.githubusercontent.com/yasaricli/docker-hook/master/docker-hook > docker-hook
     chmod +x docker-hook
-```
 
 #### Start `docker-hook`
 
